@@ -9,6 +9,7 @@ var autor = require('./models/autores'); // Carga el modelo autores
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var autores = require('./routes/autores');
+var libros = require('./routes/libros');
 
 
 var app = express();
@@ -29,6 +30,7 @@ app.use('/', routes);
 app.use('/users', users);
 //Agregando autores
 app.use('/autores', autores);
+app.use('/libros', libros);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

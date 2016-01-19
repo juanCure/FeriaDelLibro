@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Libros</title>
+</head>
+<body>
+Index libros
+
+
+<a href="/libros/alta">Alta</a>
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+
+var url = '/libros/mostrar/todos'
+jQuery.getJSON(url, function(data){console.log(data);
+var i = 0;
+
+console.log(data.length);
+
+while(i < data.length){
+	//console.log(data);
+	jQuery('body').append('<br/>' + data[i].titulo + "<br/> " +  data[i].autores[0].apellidos + ', ' + data[i].autores[0].nombre + '<br/><a href="/libros/eliminar/'+ data[i]._id +'">Eliminar</a><hr/>');
+
+	i++
+}
+
+});
+
+
+
+</script>
+
+</body>
+</html>
