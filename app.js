@@ -4,9 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var db = require('./models/db'); // Se conecta a la base de datos
+var autor = require('./models/autores'); // Carga el modelo autores
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var autores = require('./routes/autores');
+
 
 var app = express();
 
@@ -24,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+//Agregando autores
+app.use('/autores', autores);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
