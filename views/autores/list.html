@@ -5,12 +5,29 @@
 <title>Autores</title>
 </head>
 <body>
+  Todos los autores
+  <br><br>
+  <a href="/autores/nuevo">Nuevo autor</a>
+  <div id="content">
+    <table id="autores" border="1" style="width:100%">
+    </table>
+  </div>
 
-<h1>Lista de autores</h1>
-<a href="url">Nuevo autor</a>
-<div id="content">
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript">
 
-</div>
+  var url = '/autores'
+  jQuery.getJSON(url, function(data){console.log(data);
+  var i = 0;
 
+  console.log(data.length);
+  while(i < data.length){
+    $('#autores').append('<tr><td>' + data[i].nombre + ' ' + data[i].apellidos +  '</td><td>' + data[i].libros[0].titulo + '</td><td>' + data[i].semblanza + '</td><td>' +
+    data[i].fecha + '</td></tr>');
+  	i++
+  }
+
+  });
+</script>
 </body>
 </html>

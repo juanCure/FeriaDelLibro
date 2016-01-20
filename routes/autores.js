@@ -18,7 +18,15 @@ router.get('/nuevo', function(req, res){
   res.sendFile(path.join(__dirname, "../views/autores/formulario.html"))
 });
 
-/* POST /todos */
+/* GET /autores/list
+Metodo para listar todos los usuarios
+*/
+
+router.get('/list', function(req, res) {
+  res.sendFile(path.join(__dirname, "../views/autores/list.html"))
+});
+
+/* POST /procesa_autores */
 router.post('/procesa_autores', function(req, res, next) {
   // Autor.create(req.body, function (err, post) {
   //   if (err) return next(err);
@@ -41,8 +49,8 @@ router.post('/procesa_autores', function(req, res, next) {
     if(err) return next(err);
     else {
       console.log(autor);
-      res.json(autor);
-      //res.sendFile(path.join(__dirname, "../views/autores/list.html"));
+      //res.json(autor);
+      res.sendFile(path.join(__dirname, "../views/autores/list.html"));
     }
   });
 });
