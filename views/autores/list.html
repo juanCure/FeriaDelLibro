@@ -23,7 +23,8 @@
   console.log(data.length);
   while(i < data.length){
     $('#autores').append('<tr><td>' + data[i].nombre + ' ' + data[i].apellidos +  '</td><td>' + data[i].libros[0].titulo + '</td><td>' + data[i].semblanza + '</td><td>' +
-    data[i].fecha + '</td></tr>');
+    data[i].fecha + '</td><td><a href="/autores/eliminar/' + data[i]._id + '">Eliminar</a></td><td><a href="/autores/mostrar/'+ data[i]._id + '">Editar</a></td></tr>');
+    //data[i].fecha + '</td><td><a href="/autores/eliminar/' + data[i]._id + '">Eliminar</a></td></tr>');
   	i++
   }
 

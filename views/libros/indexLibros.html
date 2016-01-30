@@ -19,8 +19,7 @@ console.log(data.length);
 
 while(i < data.length){
 	//console.log(data);
-	jQuery('body').append('<br/>' + data[i].titulo + "<br/> " +  data[i].autores[0].apellidos + ', ' + data[i].autores[0].nombre + '<br/><a href="/libros/eliminar/'+ data[i]._id +'">Eliminar</a><hr/>');
-
+	jQuery('body').append('<br/>' + data[i].titulo + "<br/> " +  data[i].autores[0].apellidos + ', ' + data[i].autores[0].nombre + "<br/>" + data[i].semblanza +'<br/><a href="/libros/eliminar/'+ data[i]._id +'">Eliminar</a><hr/>');
 	i++
 }
 
